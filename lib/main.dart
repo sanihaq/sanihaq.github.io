@@ -1,3 +1,4 @@
+@Import.onWeb('dart:html', show: [#window])
 import 'package:jaspr/html.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_router/jaspr_router.dart';
