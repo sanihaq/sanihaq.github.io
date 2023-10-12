@@ -17,14 +17,8 @@ jobs:
       - run: dart pub global activate jaspr_cli
       - run: jaspr --version
       - run: jaspr generate
-      - uses: actions/upload-artifact@v3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: my-artifact
-          path: build/jaspr
-      - name: Fix permissions
-        run: |
-          chmod -c -R +rX "_site/" | while read line; do
-            echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
