@@ -1,0 +1,9 @@
+[
+  {
+    "url": "dart:html",
+    "show": [
+      "window"
+    ],
+    "platform": 0
+  }
+]
