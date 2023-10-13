@@ -1,5 +1,7 @@
 import 'package:jaspr/html.dart';
 import 'package:jaspr/jaspr.dart';
+@Import.onWeb('dart:html', show: [#window])
+import 'hello.imports.dart';
 
 part 'hello.g.dart';
 
@@ -10,6 +12,7 @@ class Hello extends StatelessComponent with _$Hello {
     yield Button(
       label: 'Say Hi!',
       onPressed: () {
+        window.alert("Hi!!");
         print("Hello World");
       },
     );
